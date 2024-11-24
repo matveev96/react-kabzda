@@ -22,7 +22,6 @@ type StarTypeProps = {
 }
 
 function Star(props: StarTypeProps) {
-    debugger;
     return props.selected ? <span><b>Star </b></span> : <span>Star </span>
 
 }
