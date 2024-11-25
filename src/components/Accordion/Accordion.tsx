@@ -1,15 +1,16 @@
 import React from "react";
 
-type AccordionPropsType = {
+export type AccordionPropsType = {
     title: string;
-    collapsed: boolean;
+    accordionCollapsed: boolean;
+    onClick: (accordionCollapsed: boolean) => void;
 }
 
-export function Accordion({title, collapsed}: AccordionPropsType) {
+export function Accordion({title, onClick, accordionCollapsed}: AccordionPropsType) {
         return (
             <div>
-                <AccordionTitle titleValue={title}/>
-                {!collapsed && <AccordionBody/>}
+                <AccordionTitle titleValue={title} onClickTitle={() => onClick(!accordionCollapsed)}/>
+                {!accordionCollapsed && <AccordionBody/>}
             </div>
         )
 
@@ -17,12 +18,13 @@ export function Accordion({title, collapsed}: AccordionPropsType) {
 
 type AccordionTitlePropsType = {
     titleValue: string;
+    onClickTitle: () => void;
 }
 
-function AccordionTitle({titleValue}: AccordionTitlePropsType) {
+function AccordionTitle({titleValue, onClickTitle}: AccordionTitlePropsType) {
     console.log('AccordionTitle rendered')
     return (
-        <h3>{titleValue}</h3>
+        <h3 onClick={onClickTitle}>{titleValue}</h3>
     )
 }
 
