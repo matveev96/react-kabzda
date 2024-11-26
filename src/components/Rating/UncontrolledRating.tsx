@@ -1,14 +1,15 @@
 import React from "react";
 
 type UncontrolledRatingProps = {
-
+    title: string;
 }
 
 
-export function UncontrolledRating() {
+export function UncontrolledRating({title}: UncontrolledRatingProps) {
     const [value, setValue] = React.useState(0);
     return (
         <div>
+            <h3>{title}</h3>
             <Star selected={value > 0} setValue={setValue} value={1}/>
             <Star selected={value > 1} setValue={setValue} value={2}/>
             <Star selected={value > 2} setValue={setValue} value={3}/>

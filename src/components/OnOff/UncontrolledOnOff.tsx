@@ -1,21 +1,20 @@
 import React, {useState} from 'react';
 
-export type OnOffPropsType = {
-    onClick: (onOff: boolean) => void;
-    onOff: boolean
-    title: string
+type UncontrolledOnOffPropsType = {
+    title: string;
+    onChange: (on: boolean) => void;
 }
 
+export const UncontrolledOnOff = ({title, onChange}: UncontrolledOnOffPropsType) => {
 
-export const OnOff = ({onClick, onOff, title }: OnOffPropsType) => {
 
-
+    const [on, setOn] = useState(false);
     const onStyle = {
         display: 'inline-block',
         width: '30px',
         height: '30px',
         border: '1px solid black',
-        backgroundColor: onOff ? 'green' : 'white',
+        backgroundColor: on ? 'green' : 'white',
         cursor: 'pointer',
     }
     const offStyle = {
@@ -23,7 +22,7 @@ export const OnOff = ({onClick, onOff, title }: OnOffPropsType) => {
         width: '30px',
         height: '30px',
         border: '1px solid black',
-        backgroundColor: onOff ? 'white' : 'red',
+        backgroundColor: on ? 'white' : 'red',
         cursor: 'pointer',
 
         margin: '0 10px',
@@ -34,15 +33,24 @@ export const OnOff = ({onClick, onOff, title }: OnOffPropsType) => {
         borderRadius: '15px',
         border: '1px solid black',
         display: 'inline-block',
-        backgroundColor: onOff ? 'green' : 'red',
+        backgroundColor: on ? 'green' : 'red',
+    }
+
+    const OnClicked = () => {
+        setOn(true)
+        onChange(on)
+    }
+    const OffClicked = () => {
+        setOn(false)
+        onChange(on)
     }
 
     return (
         <div>
             <hr/>
             <h3>{title}</h3>
-            <div style={onStyle} onClick={() => { onClick(!onOff) }}>On</div>
-            <div style={offStyle} onClick={() => { onClick(!onOff) }}>Off</div>
+            <div style={onStyle} onClick={OnClicked}>On</div>
+            <div style={offStyle} onClick={OffClicked}>Off</div>
             <div style={indicatorStyle}></div>
             <hr/>
         </div>

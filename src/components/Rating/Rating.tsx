@@ -5,12 +5,14 @@ export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
 type RatingProps = {
     value: RatingValueType;
     onClick: (value: RatingValueType) => void;
+    title: string;
 }
 
-export function Rating({ value, onClick}: RatingProps) {
+export function Rating({ value, onClick, title}: RatingProps) {
 
     return (
         <div>
+            <h3>{title}</h3>
             <Star selected={value > 0} onClick={onClick} value={1}/>
             <Star selected={value > 1} onClick={onClick} value={2}/>
             <Star selected={value > 2} onClick={onClick} value={3}/>
