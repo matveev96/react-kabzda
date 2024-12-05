@@ -5,7 +5,7 @@ import {Rating, RatingValueType} from "./Rating";
 import {useState} from "react";
 
 export default {
-    title: 'Rating stories',
+    title: 'Rating',
     component: Rating
 };
 

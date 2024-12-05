@@ -6,7 +6,7 @@ import {OnOff} from "./OnOff";
 import {Rating, RatingValueType} from "../Rating/Rating";
 
 export default {
-    title: 'OnOff stories',
+    title: 'OnOff',
     component: OnOff
 };
 
