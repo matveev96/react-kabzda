@@ -3,9 +3,9 @@ import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
-import {UncontrolledAccordion} from "./components/Accordion/UncontrolledAccordion";
-import {UncontrolledRating} from "./components/Rating/UncontrolledRating";
-import {UncontrolledOnOff} from "./components/OnOff/UncontrolledOnOff";
+import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
+import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
 
             <Rating value={ratingValue} onClick={setRatingValue} title='Controlled Rating'/>
 
-            <UncontrolledRating title='Uncontrolled Rating'/>
+            <UncontrolledRating title='Uncontrolled Rating' onChange={() => {}}/>
 
             <Accordion title={'Controlled Accordion'} onClick={setAccordionCollapsed} accordionCollapsed={accordionCollapsed}/>
 
@@ -27,7 +27,7 @@ function App() {
 
             {/*<OnOff onClick={setOnOff} onOff={onOff} title='Controlled OnOff'/>*/}
 
-            <UncontrolledOnOff title='Uncontrolled OnOff' onChange={setOnOff}/> {onOff.toString()}
+            <UncontrolledOnOff title='Uncontrolled OnOff' /> {onOff.toString()}
         </div>
     );
 }

@@ -2,13 +2,13 @@ import React, {useState} from 'react';
 
 type UncontrolledOnOffPropsType = {
     title: string;
-    onChange: (on: boolean) => void;
+    defaultOn?: boolean;
 }
 
-export const UncontrolledOnOff = ({title, onChange}: UncontrolledOnOffPropsType) => {
+export const UncontrolledOnOff = ({title, defaultOn}: UncontrolledOnOffPropsType) => {
 
 
-    const [on, setOn] = useState(false);
+    const [on, setOn] = useState(defaultOn ? defaultOn : false);
     const onStyle = {
         display: 'inline-block',
         width: '30px',
@@ -38,11 +38,9 @@ export const UncontrolledOnOff = ({title, onChange}: UncontrolledOnOffPropsType)
 
     const OnClicked = () => {
         setOn(true)
-        onChange(on)
     }
     const OffClicked = () => {
         setOn(false)
-        onChange(on)
     }
 
     return (

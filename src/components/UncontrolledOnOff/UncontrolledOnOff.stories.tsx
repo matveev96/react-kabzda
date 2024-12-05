@@ -9,5 +9,5 @@ export default {
 };
 
 export const UncontrolledOnOffDemo = () => {
-    return <UncontrolledOnOff title={'UncontrolledOnOffDemo'} onChange={x=>x}/>
+    return <UncontrolledOnOff title={'UncontrolledOnOffDemo'} defaultOn={true}/>
 }

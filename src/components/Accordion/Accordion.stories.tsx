@@ -9,8 +9,6 @@ export default {
     component: Accordion
 };
 
-
-
 // type Story = StoryObj<typeof Accordion>;
 //
 // export const FirstStory: Story = {
