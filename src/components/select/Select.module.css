@@ -1,0 +1,21 @@
+.select {
+    width: 100px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.items {
+    width: 100px;
+    padding: 5px;
+    border: 1px solid red;
+    position: absolute;
+}
+
+.item.selected {
+    background-color: #66bf3c;
+}
+
+
+/*.select.active .items {*/
+/*    display: block;*/
+/*}*/
