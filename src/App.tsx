@@ -7,6 +7,7 @@ import {UncontrolledAccordion} from "./components/UncontrolledAccordion/Uncontro
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 
+
 function App() {
 
     const [ratingValue, setRatingValue] = useState<0 | 1 | 2 | 3 | 4 | 5>(0)
@@ -21,13 +22,14 @@ function App() {
 
             <UncontrolledRating title='Uncontrolled Rating' onChange={() => {}}/>
 
-            <Accordion title={'Controlled Accordion'} onClick={setAccordionCollapsed} accordionCollapsed={accordionCollapsed}/>
+            {/*<Accordion title={'Controlled Accordion'} onClick={setAccordionCollapsed} accordionCollapsed={accordionCollapsed} items={}/>*/}
 
             <UncontrolledAccordion title={'Uncontrolled Accordion'} />
 
             {/*<OnOff onClick={setOnOff} onOff={onOff} title='Controlled OnOff'/>*/}
 
             <UncontrolledOnOff title='Uncontrolled OnOff' /> {onOff.toString()}
+
         </div>
     );
 }
