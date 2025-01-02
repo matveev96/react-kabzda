@@ -15,10 +15,10 @@ export type SelectProps = {
 
 export function SelectDimych({items, onChange, value}: SelectProps) {
     const [active, setActive] = useState(false)
-    const [hoveredElemenValue, setHoveredElemenValue] = useState(value)
+    const [hoveredElemenValue, setHoveredElementValue] = useState(value)
 
     useEffect(() => {
-        setHoveredElemenValue(value)
+        setHoveredElementValue(value)
     }, [value])
 
     const selectedItem = items.find(el => el.value === value)
@@ -34,9 +34,9 @@ export function SelectDimych({items, onChange, value}: SelectProps) {
         if(e.key === "ArrowDown" || e.key === "ArrowUp") {
             for(let i=0; i < items.length; i++) {
                 if(items[i].value === hoveredElemenValue) {
-                    const preendentElement = e.key === "ArrowDown" ? items[i+1] : items[i-1]
-                    if(preendentElement) {
-                        onChange(preendentElement.value)
+                    const pretendentElement = e.key === "ArrowDown" ? items[i+1] : items[i-1]
+                    if(pretendentElement) {
+                        onChange(pretendentElement.value)
                         return;
                     }
                 }
@@ -60,7 +60,7 @@ export function SelectDimych({items, onChange, value}: SelectProps) {
                     <div className={styles.items}>
                         {
                             items.map(i => <div
-                                onMouseEnter={() => setHoveredElemenValue(i.value)}
+                                onMouseEnter={() => setHoveredElementValue(i.value)}
                                 className={styles.item + " " + (hoveredItem === i ? styles.selected : "")}
                                 key={i.value}
                                 onClick={() => onItemClicked(i.value)}
