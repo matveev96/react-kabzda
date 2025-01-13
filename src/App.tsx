@@ -26,7 +26,7 @@ function App() {
 
             <UncontrolledAccordion title={'Uncontrolled Accordion'} />
 
-            {/*<OnOff onClick={setOnOff} onOff={onOff} title='Controlled OnOff'/>*/}
+            <OnOff onClick={setOnOff} onOff={onOff} title='Controlled OnOff'/>
 
             <UncontrolledOnOff title='Uncontrolled OnOff' /> {onOff.toString()}
 
